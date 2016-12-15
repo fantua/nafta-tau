@@ -1,0 +1,126 @@
+<script src="js/dist/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/xy.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+<button id="change">Change Graph</button>
+<button id="addNewPoint">AddNew Point</button>
+<button id="addNewGraph">AddNew Graph</button>
+<div id="chartdiv" style="width: 100%; height: 500px;"></div>
+<script>
+    var chart = AmCharts.makeChart("chartdiv", {
+        "type": "xy",
+        "pathToImages": "http://www.amcharts.com/lib/3/images/",
+        "theme": "none",
+        "titles": [{
+            "text": "Хуйня",
+            "size": 15
+        }],
+        "dataProvider": [{
+            "y": 10,
+            "x": 14,
+            "value": 59,
+            "y2": -5,
+            "x2": -3,
+            "value2": 44
+        },
+            {
+                "y": 13,
+                "x": 4,
+                "value": 39,
+                "y2": 13,
+                "x2": 16,
+                "value2": 14
+            }],
+        "valueAxes": [{
+            "position":"bottom",
+            "axisAlpha": 1,
+            "title": "X Axis",
+            "axisThickness": 2,
+            "gridThickness": 2
+        }, {
+            "minMaxMultiplier": 1.2,
+            "axisAlpha": 1,
+            "position": "left",
+            "title": "Y Axis",
+            "axisThickness": 2
+        }],
+        "startDuration": 0.5,
+        "graphs": [{
+            "balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b><br>value:<b>[[value]]</b>",
+            "bullet": "circle",
+            "bulletColor": "#FF1493",
+            "lineAlpha": 1,
+            "lineThickness": 5,
+            "lineColor": "#FF1493",
+            "fillAlphas": 0,
+            "valueField": "value",
+            "xField": "x",
+            "yField": "y",
+            "maxBulletSize": 20,
+            "minBulletSize": 20
+        }, {
+            "balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b><br>value:<b>[[value]]</b>",
+            "bullet": "triangleUp",
+            "bulletColor": "#FFEE93",
+            "lineAlpha": 1,
+            "lineThickness": 5,
+            "lineColor": "#FFAAD3",
+            "fillAlphas": 0,
+            "valueField": "value2",
+            "xField": "x2",
+            "yField": "y2",
+            "maxBulletSize": 20,
+            "minBulletSize": 20
+        }],
+        "marginLeft": 46,
+        "marginBottom": 35
+    });
+
+    $('#change').click(function(){
+        chart.dataProvider[0].y = 12;
+        chart.validateData();
+    });
+
+    $('#addNewPoint').click(function(){
+        chart.dataProvider.push({"y": 15,
+            "x": 16,
+            "value": 35,
+            "y2": 8,
+            "x2": -6,
+            "value2": 45});
+        chart.validateData();
+    });
+
+    $('#addNewGraph').click(function(){
+
+        obj0 = {"y3": 20,"x3": 20,"value3": 20};
+        obj1 = {"y3": 25,"x3": 25,"value3": 25};
+        obj2 = {"y3": 30,"x3": 30,"value3": 30};
+
+        var newGraphPoints = new Array( obj0, obj1, obj2)
+        var graph = {
+            "balloonText": "x:<b>[[x3]]</b> y:<b>[[y3]]</b><br>value:<b>[[value3]]</b>",
+            "bullet": "diamond",
+            "bulletColor": "#FBEEAA",
+            "lineAlpha": 1,
+            "lineThickness": 5,
+            "lineColor": "#FAAADA",
+            "fillAlphas": 0,
+            "valueField": "value3",
+            "xField": "x3",
+            "yField": "y3",
+            "maxBulletSize": 20,
+            "minBulletSize": 20
+        };
+        for(var i=0; i<chart.dataProvider.length; i++){
+            chart.dataProvider[i].y3 = newGraphPoints[i].y3;
+            chart.dataProvider[i].x3 = newGraphPoints[i].x3;
+            chart.dataProvider[i].value3 = newGraphPoints[i].value3;
+        }
+
+        chart.addGraph(graph);
+        chart.validateNow();
+    });
+
+
+</script>

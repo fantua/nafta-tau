@@ -1,0 +1,32 @@
+.line {
+    stroke: #000;
+    stroke-width: 2;
+}
+.triangle {
+    fill: #000;
+    stroke: #000;
+    stroke-width: 2;
+}
+.circle {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+}
+.rect {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 2;
+}
+.text {
+    fill: #000;
+}
+
+.rect.selected {
+    stroke: #0c0;
+}
+
+#chart {
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+}
