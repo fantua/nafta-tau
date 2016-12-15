@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">Сконфігуруйте ланку W{{id}}</h4>
+</div>
+<form>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Виберіть тип ланки</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="type" value="1" required>
+                    <img src="img/w_1.gif">
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="type" value="2">
+                    <img src="img/w_2.gif">
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="type" value="3">
+                    <img src="img/w_3.gif">
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="type" value="4">
+                    <img src="img/w_4.gif">
+                </label>
+            </div>
+        </div>
+        <div id="set-data">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">K</div>
+                    <input class="form-control" name="k" type="number" min="1" placeholder="Введіть дані" required>
+                </div>
+            </div>
+            <div class="form-group" id="set-t">
+                <div class="input-group">
+                    <div class="input-group-addon">T</div>
+                    <input class="form-control" name="t" type="number" min="0.001" max="0.999" step="0.001" placeholder="Введіть дані" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Готово</button>
+    </div>
+</form>

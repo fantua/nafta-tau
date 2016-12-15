@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="vendor/jquery-2.1.4.min.js"></script>
+    <script src="vendor/snap.svg-min.js"></script>
+    <script src="js/graph.js"></script>
+    <script>
+
+        $(function () {
+            var test = new Graph('#graph');
+
+            test.setTitles('lg w (декади)', '20lgA(w) (Дб)');
+
+            var dataset = [];
+
+            dataset.push({x: 10, y: 59});
+            dataset.push({x: 30, y: 40});
+            dataset.push({x: 30, y: -30});
+            dataset.push({x: 50, y: 20});
+            dataset.push({x: 500, y: 20});
+
+            test.line(dataset);
+
+        });
+
+
+    </script>
+</head>
+<body>
+<svg id="graph" width="500" height="420"></svg>
+</body>
+</html>

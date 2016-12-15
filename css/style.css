@@ -1,0 +1,79 @@
+svg {
+    display: block;
+    margin: auto;
+}
+
+.schema .line {
+    stroke: #000;
+    stroke-width: 2;
+}
+
+.schema .triangle {
+    fill: #000;
+    stroke: #000;
+    stroke-width: 2;
+}
+.schema .circle {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+}
+.schema .rect {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 2;
+}
+.schema .text {
+    fill: #000;
+}
+
+.schema .rect.configured {
+    stroke: #0c0;
+}
+
+.input-group-addon {
+    min-width:50px;
+}
+
+/* Graph.js */
+
+line.axis {
+    stroke: #000;
+    stroke-width: 2;
+}
+
+text.y-label {
+    text-anchor: end;
+    alignment-baseline: central;
+}
+
+text.y-label-name {
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+text.x-label {
+    text-anchor: middle;
+}
+
+text.x-label-name {
+    text-anchor: middle;
+    alignment-baseline: hanging;
+    font-weight: bold;
+}
+
+
+line.help-line {
+    stroke: #000;
+    stroke-dasharray: 5, 5
+}
+
+tspan.sup {
+    font-size: 10px;
+    baseline-shift: super
+}
+
+line.line {
+    stroke: #000;
+    stroke-width: 2;
+}

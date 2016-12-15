@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h4 class="modal-title">Налаштування</h4>
+</div>
+<form>
+<div class="modal-body">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Кількість ланок</label>
+        <label class="radio-inline">
+            <input type="radio" name="count" value="2" required> 2
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="count" value="3"> 3
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="count" value="4"> 4
+        </label>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Готово</button>
+</div>
+</form>

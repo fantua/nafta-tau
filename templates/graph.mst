@@ -1,0 +1,3 @@
+<h4>Побудова ЛАЧХ бажаної САУ та коректуючої ланки</h4>
+<svg id="graph" class="graph" width="500" height="420"></svg>
+<button id="next" type="button" class="btn btn-lg btn-primary">Продовжити</button>

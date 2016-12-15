@@ -1,0 +1,43 @@
+<div id="schema-group">
+    <h4>Структурна схема системи <small>сконфігуруйте всі ланки</small></h4>
+    <svg id="schema" class="schema" height="400px" width="980px">
+        <line x1="50" y1="100" x2="150" y2="100" class="line" />
+        <polyline points="150,90 150,110 180,100 150,90" class="triangle" />
+
+        <circle cx="195" cy="100" r="15" class="circle" />
+        <line x1="185" y1="90" x2="205" y2="110" class="line" />
+        <line x1="208" y1="90" x2="185" y2="110" class="line" />
+
+        <g id="sections">
+            {{#sections}}
+                {{prepare}}
+
+                <line x1="{{x1}}" y1="100" x2="{{x2}}" y2="100" class="line" />
+                <polyline points="{{x2}},90 {{x2}},110 {{#_x2}}30{{/_x2}},100 {{x2}},90" class="triangle" />
+                <g class="section" data-id="{{id}}">
+                    <rect x="{{#_x2}}30{{/_x2}}" y="80" width="80" height="40" class="rect {{#configured}}configured{{/configured}}" />
+                    <text x="{{#_x2}}60{{/_x2}}" y="105" class="text">W{{id}}</text>
+                </g>
+
+                {{#configured}}
+                    <line x1="{{#_x2}}70{{/_x2}}" y1="150" x2="{{#_x2}}70{{/_x2}}" y2="120" class="line" />
+                    <polyline points="{{#_x2}}65{{/_x2}},150 {{#_x2}}75{{/_x2}},150 {{#_x2}}70{{/_x2}},160 {{#_x2}}65{{/_x2}},150" class="triangle" />
+                    <image x="{{x2}}" y="160" width="{{imageWidth}}" height="{{imageHeight}}" xlink:href="img/w_{{type}}.gif" />
+                    <text x="{{x2}}" y="215" class="text">
+                        <tspan>K: {{K}}</tspan>
+                        <tspan x="{{x2}}" dy="1.2em">{{#_T}} T: {{T}} {{/_T}}</tspan>
+                    </text>
+                {{/configured}}
+            {{/sections}}
+        </g>
+
+        <line x1="{{x1}}" y1="100" x2="950" y2="100" class="line" />
+        <polyline points="950,90 950,110 980,100 950,90" class="triangle" />
+
+        <line x1="900" y1="100" x2="900" y2="320" class="line" />
+        <line x1="900" y1="320" x2="195" y2="320" class="line" />
+        <line x1="195" y1="320" x2="195" y2="145" class="line" />
+        <polyline points="185,145 195,115 205,145 185,145" class="triangle" />
+    </svg>
+    <button id="next" type="button" class="btn btn-lg btn-primary" disabled>Продовжити</button>
+</div>
